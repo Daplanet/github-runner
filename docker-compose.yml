@@ -1,0 +1,21 @@
+---
+version: '2.3'
+network: {}
+volumes: {}
+services:
+  worker:
+    image: myoung34/github-runner:latest
+    environment:
+      REPO_URL: ${GH_REPO_URL}
+      RUNNER_NAME: ${HOSTNAME}
+      RUNNER_TOKEN: ${GH_RUNNER_TOKEN} 
+      RUNNER_WORKDIR: /tmp/runner/work
+      RUNNER_GROUP: garterney
+      ORG_RUNNER: 'true'
+      LABELS: linux,arm,gpu
+    security_opt:
+      # needed on SELinux systems to allow docker container to manage other docker containers
+      - label:disable
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner:/tmp/runner'

@@ -1,0 +1,14 @@
+- name: Run using a project directory
+  hosts: all
+  become: no
+  gather_facts: no
+
+  tasks:
+    - name: Tear down existing services
+      community.docker.docker_compose:
+        project_src: github-actions-runner
+        state: absent
+
+    - name: Create and start services
+      community.docker.docker_compose:
+        project_src: github-actions-runner

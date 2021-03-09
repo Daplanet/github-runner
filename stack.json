@@ -1,0 +1,17 @@
+{
+        "categories": [
+            "cicd",
+	    "runner",
+	    "serverless"
+        ],
+        "description": "Github actions self hosted runner",
+        "logo": "https://avatars.githubusercontent.com/u/44036562?s=200&v=4",
+        "note": "Requires Github token, see https://hub.docker.com/r/myoung34/github-runner for details",
+        "platform": "linux",
+        "repository": {
+            "stackfile": "docker-compose.yml",
+            "url": "https://github.com/Daplanet/github-runner"
+        },
+        "title": "Github Actions Runner",
+        "type": "compose"
+}
