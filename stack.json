@@ -10,7 +10,7 @@
         "platform": "linux",
         "repository": {
             "stackfile": "docker-compose.yml",
-            "url": "https://github.com/Daplanet/github-runner"
+            "url": "https://github.com/Daplanet/net.dapla.services.cicd.github"
         },
         "title": "Github Actions Runner",
         "type": "compose"
